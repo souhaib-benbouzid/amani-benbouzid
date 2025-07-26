@@ -11,7 +11,7 @@ type Props = {
 
 export const ProjectCard = (props: Props) => {
   return (
-    <div className="project-card p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+    <div className="project-card p-4 border rounded-lg shadow-sm hover:shadow-md transition max-w-sm md:max-w-md">
       {props.image && (
         <Image
           src={props.image}

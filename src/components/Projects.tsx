@@ -18,7 +18,7 @@ export const Projects = () => {
       className="projects-section max-w-7xl mx-auto px-4 py-8"
     >
       <h1 className="text-2xl font-bold mb-4 text-center">Projects</h1>
-      <div className="flex flex-wrap gap-6 justify-center">
+      <div className="flex flex-wrap gap-6 justify-center max-sm">
         {projects.map((project) => (
           <ProjectCard
             key={project.id}

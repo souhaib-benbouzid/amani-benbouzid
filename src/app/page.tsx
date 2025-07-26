@@ -5,7 +5,7 @@ import { Projects } from "@/components/Projects";
 
 export default function Home() {
   return (
-    <main className="pt-(--mobile-nav-height) flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen">
       <Navbar />
       <Hero />
       <Projects />
