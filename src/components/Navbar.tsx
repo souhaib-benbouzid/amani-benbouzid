@@ -1,9 +1,15 @@
 "use client";
 
 import { useDarkMode } from "@/hooks/useDarkMode";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import {
+  Cancel01Icon,
+  Menu01Icon,
+  Moon02Icon,
+  SunIcon,
+} from "@hugeicons/core-free-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { IconWrapper } from "./IconWrapper";
 
 const navItems = [
   { name: "Projects", href: "/#projects" },
@@ -56,7 +62,7 @@ export const Navbar = () => {
             <Link
               key={item.name}
               href={item.href}
-              className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
+              className="text-gray-700 dark:text-gray-300 hover:underline transition-all duration-300"
             >
               {item.name}
             </Link>
@@ -70,9 +76,9 @@ export const Navbar = () => {
             aria-label="Toggle dark mode"
           >
             {isDark ? (
-              <Sun className="h-5 w-5" />
+              <IconWrapper icon={SunIcon} className="h-5 w-5" />
             ) : (
-              <Moon className="h-5 w-5" />
+              <IconWrapper icon={Moon02Icon} className="h-5 w-5" />
             )}
           </button>
           <button
@@ -81,9 +87,9 @@ export const Navbar = () => {
             aria-label="Toggle navigation menu"
           >
             {menuOpen ? (
-              <X className="h-5 w-5" />
+              <IconWrapper icon={Cancel01Icon} className="h-5 w-5" />
             ) : (
-              <Menu className="h-5 w-5" />
+              <IconWrapper icon={Menu01Icon} className="h-5 w-5" />
             )}
           </button>
         </span>

@@ -14,7 +14,7 @@ export const ProjectCard = (props: Props) => {
   return (
     <a
       id={`project-${props.id}`}
-      className="flex flex-col lg:flex-row items-start lg:items-center p-4 hover:shadow-md transition-shadow duration-300 py-2 px-4 lg:p-0 max-w-sm lg:max-w-none"
+      className="flex flex-col lg:flex-row items-start lg:items-center p-4 py-2 px-4 lg:p-0 max-w-sm lg:max-w-none hover:scale-105 transition-transform duration-300  rounded-lg "
       href={props.link}
     >
       {props.image && (
@@ -25,6 +25,13 @@ export const ProjectCard = (props: Props) => {
             layout="fill"
             objectFit="cover"
           />
+          <div className="absolute inset-0 bg-black opacity-0 hover:opacity-30 transition-opacity duration-300">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-white text-lg font-semibold">
+                View Case Study
+              </span>
+            </div>
+          </div>
         </div>
       )}
       <div className="flex-1 lg:ml-14 lg:flex lg:flex-col lg:justify-center ">

@@ -1,13 +1,14 @@
 import Footer from "@/components/Footer";
+import { IconWrapper } from "@/components/IconWrapper";
 import { Navbar } from "@/components/Navbar";
-import { ArrowDownRight } from "lucide-react";
+import { ArrowDownRight01Icon } from "@hugeicons/core-free-icons";
 
 export default function AboutMe() {
   return (
     <main className="pt-(--mobile-nav-height) flex flex-col min-h-screen bg-background dark:bg-background-dark">
       <Navbar />
       <section className="py-20 max-w-5xl mx-auto px-4 ">
-        <h1 className="text-3xl font-bold mb-4 text-neutral-500 dark:text-neutral-300">
+        <h1 className="text-3xl font-semibold mb-4 text-neutral-700 dark:text-neutral-300">
           About me
         </h1>
         <p className="text-neutral-500 dark:text-neutral-400">
@@ -26,7 +27,7 @@ export default function AboutMe() {
           download="Amani_Benbouzid_Resume.pdf"
           className="hover:underline text-red-500 dark:text-red-400 inline-flex items-center gap-1"
         >
-          <ArrowDownRight className="inline ml-1" />
+          <IconWrapper icon={ArrowDownRight01Icon} className="inline ml-1" />
           <span>My resume | CV</span>
         </a>
       </section>
