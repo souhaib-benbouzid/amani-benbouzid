@@ -2,7 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { name: "Projects", href: "/#projects" },
@@ -12,13 +12,36 @@ const navItems = [
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header
       id="header"
-      className="fixed top-0 left-0 w-full z-50 bg-white/70 dark:bg-black/70 backdrop-blur border-b border-gray-200 dark:border-gray-800"
+      className={`fixed top-0 left-0 w-full z-50 bg-background-accent transition-all duration-300  ${
+        scrolled ? "shadow-md" : ""
+      }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+      <div
+        className={`flex justify-between items-center  ${
+          scrolled ? "py-3" : "py-11"
+        } px-4 md:px-32 md:py-6  transition-all duration-300 `}
+      >
         <Link
           href="/"
           className="text-xl font-bold text-gray-900 dark:text-white"
@@ -48,7 +71,7 @@ export const Navbar = () => {
       </div>
 
       {menuOpen && (
-        <nav className="md:hidden bg-white dark:bg-black px-4 pb-4">
+        <nav className="md:hidden px-4 pb-4 bg-background-accent">
           <ul className="flex flex-col space-y-3">
             {navItems.map((item) => (
               <li key={item.name}>

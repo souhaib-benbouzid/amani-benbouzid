@@ -6,16 +6,14 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="mt-20 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black py-8 max-w-7xl mx-auto px-4"
+      className="bg-background-accent mx-auto px-4 py-20 w-full mt-auto"
     >
-      <div className="flex flex-col  justify-between items-center gap-4">
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-          lets connect
+      <div className="flex flex-col justify-between items-center max-w-7xl mx-auto ">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white ">
+          Let&apos;s Connect
         </h2>
-        <p className="text-gray-600 dark:text-gray-400">
-          Feel free to reach out via email or connect with me on social media.
-        </p>
-        <div className="mt-4">
+
+        <div className="mt-8">
           <a
             href="mailto:amani@example.com"
             className="text-gray-600 dark:text-gray-400 hover:underline"
@@ -24,9 +22,9 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className="flex space-x-6 mx-auto mt-4">
+        <div className="flex flex-col md:flex-row space-y-6 space-x-6 mx-auto my-12">
           <a
-            href="https://www.behance.net/designer"
+            href="https://www.behance.net/amanibenbouzid"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-black dark:hover:text-white transition flex items-center space-x-2"
@@ -36,7 +34,7 @@ const Footer = () => {
             <span>Behance</span>
           </a>
           <a
-            href="https://dribbble.com/designer"
+            href="https://www.behance.net/amanibenbouzid"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-black dark:hover:text-white transition flex items-center space-x-2"
@@ -46,7 +44,7 @@ const Footer = () => {
             <span>Dribbble</span>
           </a>
           <a
-            href="https://www.linkedin.com/in/designer"
+            href="www.linkedin.com/in/amani-ben-24401636a"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-black dark:hover:text-white transition flex items-center space-x-2"
@@ -57,7 +55,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <p>
+        <p className="border-t-1 border-gray-200 pt-6">
           &copy; {new Date().getFullYear()} Amani Benbouzid. All rights
           reserved.
         </p>
