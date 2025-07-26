@@ -22,7 +22,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className="flex flex-col md:flex-row space-y-6 space-x-6 mx-auto my-12">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 space-x-6 mx-auto my-12">
           <a
             href="https://www.behance.net/amanibenbouzid"
             target="_blank"
