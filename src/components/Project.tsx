@@ -1,34 +1,65 @@
 import Image from "next/image";
 
 type Props = {
-  image?: string;
-  title?: string;
-  description?: string;
-  link?: string;
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  link: string;
   tags?: string[];
   comments?: string[];
 };
 
 export const ProjectCard = (props: Props) => {
   return (
-    <div className="project-card p-4 border rounded-lg shadow-sm hover:shadow-md transition max-w-sm md:max-w-md">
+    <a
+      id={`project-${props.id}`}
+      className="flex flex-col lg:flex-row items-start lg:items-center p-4 hover:shadow-md transition-shadow duration-300 py-2 px-4 lg:p-0 max-w-sm lg:max-w-none"
+      href={props.link}
+    >
       {props.image && (
-        <Image
-          src={props.image}
-          alt={props.title || "Project image"}
-          width={800}
-          height={192}
-          className="w-full h-48 object-cover mb-4"
-        />
+        <div className="relative w-full lg:w-[640px] h-56 lg:min-h-[480px] mb-3 lg:mb-0">
+          <Image
+            src={props.image}
+            alt={props.title || "Project image"}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
       )}
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-      <a href={props.link}>View Project</a>
-      <div>
-        {props.tags?.map((tag) => (
-          <span key={tag}>{tag}</span>
-        ))}
+      <div className="flex-1 lg:ml-14 lg:flex lg:flex-col lg:justify-center ">
+        <h3 className="text-lg font-semibold text-neutral-700 mb-4 line-clamp-2">
+          {props.title}
+        </h3>
+        <p className="text-sm text-neutral-600 mb-4 line-clamp-3">
+          {props.description}
+        </p>
+        <span className="text-sm text-stone-500 mb-2">
+          {props.tags?.join(", ")}
+        </span>
+
+        {props.comments && (
+          <ul className="mb-6 text-sm text-stone-500 w-full">
+            {props.comments.map((comment, index) => (
+              <li
+                key={index}
+                className={`border-b-1 border-stone-200 py-4 ${
+                  index === 0 ? "border-t-1" : ""
+                }`}
+              >
+                {comment}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <a
+          href={props.link}
+          className="lg:hidden border border-stone-300 rounded px-4 py-2 text-sm text-neutral-700 hover:bg-stone-100 transition-colors mt-4"
+        >
+          View Case Study
+        </a>
       </div>
-    </div>
+    </a>
   );
 };

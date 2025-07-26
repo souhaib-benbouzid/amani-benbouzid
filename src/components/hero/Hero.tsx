@@ -4,7 +4,7 @@ import {
   MapPin,
   MessageSquareQuote,
 } from "lucide-react";
-import HeroSvg from "./HeroSvg";
+import HeroSvg from "../HeroSvg";
 
 export const Hero = () => {
   return (

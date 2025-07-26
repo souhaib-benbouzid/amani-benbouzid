@@ -1,33 +1,44 @@
+import { Project } from "@/types";
 import { ProjectCard } from "./Project";
 
 export const Projects = () => {
-  const projects = [
-    // Example project data
-    { id: 1, title: "Project One", description: "Description of project one." },
-    { id: 2, title: "Project Two", description: "Description of project two." },
+  const projects: Project[] = [
     {
-      id: 3,
-      title: "Project Three",
-      description: "Description of project three.",
+      id: 1,
+      title: "Platform for managing both job postings and applications.",
+      description:
+        "Job Browser is a professional pre-launched hiring dashboard designed to bridge the gap between tech job seekers and employers looking to hire top talent.",
+      tags: ["Dashboard", "Job Portal"],
+      comments: ["Role : UI/UX Designer", "Final project of Gomycode."],
+      image: "/images/dashboard.png",
+      link: "/projects/job-browser",
+    },
+    {
+      id: 2,
+      title: "Space for structured, self-paced dental learning and exam prep.",
+      description:
+        "DentalPathway is a  modern, student-centered platform designed to support dental students throughout their academic journey.",
+      tags: ["Website", "Education"],
+      comments: ["Role : UI/UX Designer", "Personal Project."],
+      image: "/images/dental-pathway.png",
+      link: "/projects/dental-pathway",
     },
   ];
 
   return (
-    <section
-      id="projects"
-      className="projects-section max-w-7xl mx-auto px-4 py-8"
-    >
-      <h1 className="text-2xl font-bold mb-4 text-center">Projects</h1>
-      <div className="flex flex-wrap gap-6 justify-center max-sm">
+    <section id="projects" className="max-w-7xl mx-auto py-32 bg-white ">
+      <h1 className="text-4xl font-semibold text-center mb-20">Projects</h1>
+      <div className="flex flex-col justify-center space-y-8 lg:space-y-32">
         {projects.map((project) => (
           <ProjectCard
+            id={project.id}
             key={project.id}
             title={project.title}
             description={project.description}
-            image={`/images/project-${project.id}.jpg`} // Example image path
-            link={`/projects/${project.id}`}
-            tags={["tag1", "tag2"]} // Example tags
-            comments={["Great project!", "Very informative."]} // Example comments
+            comments={project.comments}
+            image={project.image}
+            tags={project.tags}
+            link={project.link}
           />
         ))}
       </div>
