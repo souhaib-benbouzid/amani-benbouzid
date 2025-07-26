@@ -25,9 +25,9 @@ export const ProjectCard = (props: Props) => {
             layout="fill"
             objectFit="cover"
           />
-          <div className="absolute inset-0 bg-black opacity-0 hover:opacity-30 transition-opacity duration-300">
+          <div className="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition-opacity duration-300">
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-lg font-semibold">
+              <span className="text-white text-2xl underline">
                 View Case Study
               </span>
             </div>
