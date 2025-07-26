@@ -4,13 +4,13 @@ import { ArrowDownRight } from "lucide-react";
 
 export default function AboutMe() {
   return (
-    <main className="pt-(--mobile-nav-height) flex flex-col min-h-screen">
+    <main className="pt-(--mobile-nav-height) flex flex-col min-h-screen bg-background dark:bg-background-dark">
       <Navbar />
       <section className="py-20 max-w-5xl mx-auto px-4 ">
-        <h1 className="text-3xl font-bold mb-4 text-neutral-800 dark:text-gray-100">
+        <h1 className="text-3xl font-bold mb-4 text-neutral-500 dark:text-neutral-300">
           About me
         </h1>
-        <p className="text-neutral-500 dark:text-gray-300">
+        <p className="text-neutral-500 dark:text-neutral-400">
           I&apos;m a creative and detail-oriented UI/UX designer with a passion
           for crafting intuitive, accessible, and user-centered digital
           experiences. Experienced in designing mobile and web applications
@@ -18,7 +18,7 @@ export default function AboutMe() {
           believe in combining aesthetic design with functional problem-solving
           to deliver impactful, user-focused solutions.
         </p>
-        <p className="mb-8 mt-6 text-neutral-500 dark:text-gray-300">
+        <p className="mb-8 mt-6 text-neutral-500 dark:text-neutral-400">
           Guided by the principle: “Less is more.”
         </p>
         <a

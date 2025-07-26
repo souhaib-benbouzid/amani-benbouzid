@@ -28,22 +28,22 @@ export const ProjectCard = (props: Props) => {
         </div>
       )}
       <div className="flex-1 lg:ml-14 lg:flex lg:flex-col lg:justify-center ">
-        <h3 className="text-lg font-semibold text-neutral-700 mb-4 line-clamp-2">
-          {props.title}
-        </h3>
-        <p className="text-sm text-neutral-600 mb-4 line-clamp-3">
-          {props.description}
-        </p>
-        <span className="text-sm text-stone-500 mb-2">
+        <span className="text-sm text-neutral-400 mb-2">
           {props.tags?.join(", ")}
         </span>
+        <h3 className="text-lg font-semibold text-neutral-700 mb-4 line-clamp-2  dark:text-neutral-200">
+          {props.title}
+        </h3>
+        <p className="text-sm text-neutral-600 mb-4 line-clamp-3  dark:text-neutral-400">
+          {props.description}
+        </p>
 
         {props.comments && (
-          <ul className="mb-6 text-sm text-stone-500 w-full">
+          <ul className="mb-6 text-sm text-stone-500 w-full  dark:text-neutral-400">
             {props.comments.map((comment, index) => (
               <li
                 key={index}
-                className={`border-b-1 border-stone-200 py-4 ${
+                className={`border-b-1 border-stone-200 dark:border-neutral-700 py-4 ${
                   index === 0 ? "border-t-1" : ""
                 }`}
               >
@@ -52,13 +52,9 @@ export const ProjectCard = (props: Props) => {
             ))}
           </ul>
         )}
-
-        <a
-          href={props.link}
-          className="lg:hidden border border-stone-300 rounded px-4 py-2 text-sm text-neutral-700 hover:bg-stone-100 transition-colors mt-4"
-        >
+        <button className="lg:hidden border border-stone-300 rounded px-4 py-2 text-sm text-neutral-700 hover:bg-stone-100 transition-colors mt-4">
           View Case Study
-        </a>
+        </button>
       </div>
     </a>
   );

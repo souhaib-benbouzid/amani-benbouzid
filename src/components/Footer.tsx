@@ -6,7 +6,8 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="bg-background-accent mx-auto px-4 py-20 w-full mt-auto"
+      className="mx-auto px-4 py-20 w-full mt-auto bg-background-accent dark:bg-background-accent-dark
+transition-colors duration-300"
     >
       <div className="flex flex-col justify-between items-center max-w-7xl mx-auto ">
         <h2 className="text-lg font-semibold text-gray-900 dark:text-white ">
@@ -27,7 +28,7 @@ const Footer = () => {
             href="https://www.behance.net/amanibenbouzid"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-black dark:hover:text-white transition flex items-center space-x-2"
+            className="text-neutral-700  dark:text-neutral-200 hover:text-black dark:hover:text-white transition flex items-center space-x-2"
             aria-label="Behance"
           >
             <BehanceIcon className="w-5 h-5" />
@@ -37,7 +38,7 @@ const Footer = () => {
             href="https://www.behance.net/amanibenbouzid"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-black dark:hover:text-white transition flex items-center space-x-2"
+            className="text-neutral-700  dark:text-neutral-200 hover:text-black dark:hover:text-white transition flex items-center space-x-2"
             aria-label="Dribbble"
           >
             <DribbbleIcon className="w-5 h-5" />
@@ -47,7 +48,7 @@ const Footer = () => {
             href="www.linkedin.com/in/amani-ben-24401636a"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-black dark:hover:text-white transition flex items-center space-x-2"
+            className="text-neutral-700  dark:text-neutral-200 hover:text-black dark:hover:text-white transition flex items-center space-x-2"
             aria-label="LinkedIn"
           >
             <LinkedinIcon className="w-5 h-5" />
@@ -55,7 +56,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <p className="border-t-1 border-gray-200 pt-6">
+        <p className="border-t-1 border-gray-200 pt-6 text-neutral-700  dark:text-neutral-200">
           &copy; {new Date().getFullYear()} Amani Benbouzid. All rights
           reserved.
         </p>

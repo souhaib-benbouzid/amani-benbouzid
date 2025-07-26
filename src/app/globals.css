@@ -2,13 +2,20 @@
 
 :root {
   --background: #ffffff;
+  --foreground: #1f1f1f;
+  --background-dark: #060418;
+  --foreground-dark: #f8f8f8;
   --background-accent: #f8ffae;
-  --foreground: #333333;
+  --background-accent-dark: #09062b;
 }
 
 @theme inline {
   --color-background-accent: var(--background-accent);
+  --color-background-accent-dark: var(--background-accent-dark);
+  --color-background: var(--background);
+  --color-background-dark: var(--background-dark);
   --color-foreground: var(--foreground);
+  --color-foreground-dark: var(--foreground-dark);
   --font-poppins: Poppins, sans-serif;
   --color-mint-500: oklch(0.72 0.11 178);
   --mobile-nav-height: 116px;
@@ -26,3 +33,6 @@ body {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   min-height: 100vh;
 }
+
+
+@custom-variant dark (&:where(.dark, .dark *));

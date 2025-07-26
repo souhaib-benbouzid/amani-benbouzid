@@ -26,8 +26,10 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="max-w-7xl mx-auto py-32 bg-white ">
-      <h1 className="text-4xl font-semibold text-center mb-20">Projects</h1>
+    <section id="projects" className="max-w-7xl mx-auto py-32 ">
+      <h1 className="text-4xl font-semibold text-center mb-20  text-neutral-500 dark:text-neutral-300">
+        Projects
+      </h1>
       <div className="flex flex-col justify-center space-y-8 lg:space-y-32">
         {projects.map((project) => (
           <ProjectCard

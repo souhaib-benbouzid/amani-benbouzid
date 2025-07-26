@@ -1,6 +1,7 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { useDarkMode } from "@/hooks/useDarkMode";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -13,6 +14,7 @@ const navItems = [
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isDark, setIsDark] = useDarkMode();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +35,7 @@ export const Navbar = () => {
   return (
     <header
       id="header"
-      className={`fixed top-0 left-0 w-full z-50 bg-background-accent transition-all duration-300  ${
+      className={`fixed top-0 left-0 w-full z-50 bg-background-accent dark:bg-background-accent-dark transition-all duration-300  ${
         scrolled ? "shadow-md" : ""
       }`}
     >
@@ -61,17 +63,34 @@ export const Navbar = () => {
           ))}
         </nav>
 
-        <button
-          className="md:hidden text-gray-700 dark:text-gray-300"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation menu"
-        >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <span>
+          <button
+            className="mr-4 rounded transition-colors text-gray-700 dark:text-gray-300 cursor-pointer"
+            onClick={() => setIsDark(!isDark)}
+            aria-label="Toggle dark mode"
+          >
+            {isDark ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
+          </button>
+          <button
+            className="md:hidden text-gray-700 dark:text-gray-300"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            {menuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </button>
+        </span>
       </div>
 
       {menuOpen && (
-        <nav className="md:hidden px-4 pb-4 bg-background-accent">
+        <nav className="md:hidden px-4 pb-4 bg-background-accent dark:bg-background-accent-dark">
           <ul className="flex flex-col space-y-3">
             {navItems.map((item) => (
               <li key={item.name}>
