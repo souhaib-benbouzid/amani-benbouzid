@@ -57,7 +57,7 @@ export const Navbar = () => {
           Amani Ben.
         </Link>
 
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden ml-auto lg:mr-6 md:flex space-x-6">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -71,7 +71,7 @@ export const Navbar = () => {
 
         <span>
           <button
-            className="mr-4 rounded transition-colors text-gray-700 dark:text-gray-300 cursor-pointer"
+            className="mr-4 lg:mr-0 rounded transition-colors text-gray-700 dark:text-gray-300 cursor-pointer flex justify-center items-center"
             onClick={() => setIsDark(!isDark)}
             aria-label="Toggle dark mode"
           >
